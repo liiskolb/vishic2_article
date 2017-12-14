@@ -13,8 +13,8 @@ library(xlsx)
 ```
 
 ```{r}
-load(file="/Users/Liis/Desktop/vishicarticle2017/vishic2_article/GSE11121/CLEANtot_gp.RData") # gp.tot
-load("/Users/Liis/Desktop/vishicarticle2017/vishic2_article/GSE11121/CLEANsmall_gp.RData") # gp.small
+load(file="../data/CLEANtot_gp.RData") # gp.tot
+load("../data/CLEANsmall_gp.RData") # gp.small
 ```
 
 # CLEANsmall and CLEANtotal analysis
@@ -84,7 +84,7 @@ names(CLEANtotal) <- c("ID", "Domain", "Term.ID", "Term.name", "Term.size", "Ove
 CLEANtotal$ID <- unlist(lapply(CLEANtotal$ID, function(x) strsplit(x, "_")[[1]][2]))
 # Save the results to excel
 
-write.xlsx(x = CLEANtotal, file = "/Users/Liis/Desktop/vishicarticle2017/vishic2_article/CLEANtotal.xlsx",
+write.xlsx(x = CLEANtotal, file = "../data/CLEANtotal.xlsx",
         sheetName = "CLEANtotal_Best", row.names = FALSE)
 ```
 
